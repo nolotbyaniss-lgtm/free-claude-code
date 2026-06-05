@@ -15,4 +15,6 @@ debug-*.log
 llama_cache
 .smoke-results
 .vscode
-server.*
+server.*claude-mem-13.4.0.tgz
+superpowers-0.0.2.tgz
+*.tgz
