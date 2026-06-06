@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     'Le Couvent (1877, 8 personnes) et Le Presbytère (1460, 5 personnes) : deux gîtes de charme entièrement rénovés près de Carcassonne.',
 }
 
+const photos: Record<string, string> = {
+  'le-couvent': 'https://picsum.photos/seed/couvent-stone-1877/1200/900?grayscale',
+  'le-presbytere': 'https://picsum.photos/seed/presbytere-medieval-1460/1200/900?grayscale',
+}
+
 export default function LesGitesPage() {
   return (
     <>
@@ -26,8 +31,8 @@ export default function LesGitesPage() {
           key={gite.id}
           id={gite.slug}
           className={cn(
-            'scroll-mt-20 py-16 sm:py-20',
-            index % 2 === 1 && 'bg-secondary-50'
+            'scroll-mt-20 py-16 sm:py-24',
+            index % 2 === 1 ? 'bg-ink-900' : 'bg-ink-950'
           )}
         >
           <div
@@ -36,43 +41,43 @@ export default function LesGitesPage() {
               index % 2 === 1 && 'md:[&>div:first-child]:order-2'
             )}
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-200 shadow-lg">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink-800">
               <Image
-                src={gite.photo}
+                src={photos[gite.slug] ?? 'https://picsum.photos/seed/estate/1200/900?grayscale'}
                 alt={gite.nom}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
-              <span className="absolute left-4 top-4 rounded-full bg-neutral-900/80 px-3 py-1 text-xs font-medium uppercase tracking-wide text-neutral-50 backdrop-blur">
+              <span className="absolute left-4 top-4 rounded-full border border-white/10 bg-ink-950/70 px-3 py-1 text-xs font-medium uppercase tracking-wide text-ink-100 backdrop-blur">
                 Depuis {gite.annee}
               </span>
             </div>
 
             <div>
-              <p className="text-sm uppercase tracking-widest text-sage-600">
+              <p className="text-sm uppercase tracking-[0.22em] text-forest-400">
                 {gite.sousTitre}
               </p>
-              <h2 className="mt-2 font-display text-4xl text-neutral-900">
+              <h2 className="mt-2 font-display text-4xl text-ink-50 md:text-5xl">
                 {gite.nom}
               </h2>
 
-              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-700">
+              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-300">
                 <span className="inline-flex items-center gap-1.5">
-                  <Users className="h-4 w-4 text-primary-500" />
+                  <Users className="h-4 w-4 text-forest-400" />
                   {gite.capacite} voyageurs
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <BedDouble className="h-4 w-4 text-primary-500" />
+                  <BedDouble className="h-4 w-4 text-forest-400" />
                   {gite.chambres} chambres
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <Maximize className="h-4 w-4 text-primary-500" />
+                  <Maximize className="h-4 w-4 text-forest-400" />
                   {gite.surface}
                 </span>
               </div>
 
-              <p className="mt-5 leading-relaxed text-neutral-600">
+              <p className="mt-5 leading-relaxed text-ink-300">
                 {gite.description}
               </p>
 
@@ -80,9 +85,9 @@ export default function LesGitesPage() {
                 {gite.highlights.map((h) => (
                   <li
                     key={h}
-                    className="flex items-start gap-2 text-sm text-neutral-700"
+                    className="flex items-start gap-2 text-sm text-ink-200"
                   >
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-sage-500" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-forest-400" />
                     <span>{h.replace(/\*\*/g, '')}</span>
                   </li>
                 ))}
@@ -103,10 +108,12 @@ export default function LesGitesPage() {
         </section>
       ))}
 
-      <section className="bg-neutral-900 py-16 text-center text-neutral-50">
+      <section className="border-t border-ink-800 bg-ink-950 py-20 text-center">
         <div className="mx-auto max-w-2xl px-4 sm:px-6">
-          <h2 className="font-display text-3xl">Une question sur les gîtes ?</h2>
-          <p className="mt-3 text-neutral-300">
+          <h2 className="font-display text-3xl text-ink-50 md:text-4xl">
+            Une question sur les gîtes ?
+          </h2>
+          <p className="mt-3 text-ink-300">
             Sabrina &amp; Benoît vous répondent avec plaisir.
           </p>
           <a

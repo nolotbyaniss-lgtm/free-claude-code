@@ -29,22 +29,22 @@ export default function LeDomainePage() {
       />
 
       {/* Équipements */}
-      <section className="py-16 sm:py-20">
+      <section className="bg-ink-950 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-center font-display text-3xl text-neutral-900">
+          <h2 className="text-center font-display text-3xl text-ink-50 md:text-5xl">
             Équipements &amp; loisirs
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {amenities.map((a) => (
               <div
                 key={a.id}
-                className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6 shadow-sm transition-transform hover:-translate-y-1"
+                className="rounded-2xl border border-ink-700 bg-ink-900 p-6 transition-all hover:-translate-y-1 hover:border-forest-700"
               >
-                <AmenityIcon name={a.icon} className="h-9 w-9 text-primary-500" />
-                <h3 className="mt-4 font-display text-xl text-neutral-900">
+                <AmenityIcon name={a.icon} className="h-9 w-9 text-forest-400" />
+                <h3 className="mt-4 font-display text-xl text-ink-50">
                   {a.titre}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                <p className="mt-2 text-sm leading-relaxed text-ink-300">
                   {a.description}
                 </p>
               </div>
@@ -54,17 +54,17 @@ export default function LeDomainePage() {
       </section>
 
       {/* Éco-responsable */}
-      <section className="bg-sage-100 py-16 sm:py-20">
+      <section className="bg-ink-900 py-16 sm:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
           <div>
-            <p className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-sage-700">
+            <p className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.22em] text-forest-400">
               <Leaf className="h-4 w-4" />
               Notre engagement
             </p>
-            <h2 className="mt-3 font-display text-4xl text-neutral-900">
+            <h2 className="mt-3 font-display text-4xl text-ink-50 md:text-5xl">
               Un domaine éco-responsable depuis 20 ans
             </h2>
-            <p className="mt-5 leading-relaxed text-neutral-700">
+            <p className="mt-5 leading-relaxed text-ink-300">
               Bien avant que cela ne devienne courant, le Domaine du Prieuré a
               choisi une gestion respectueuse de son environnement : économies
               d&apos;eau et d&apos;énergie, matériaux durables lors des
@@ -81,10 +81,10 @@ export default function LeDomainePage() {
             ].map((s) => (
               <div
                 key={s.k}
-                className="rounded-2xl border border-sage-200 bg-neutral-50 p-6 text-center shadow-sm"
+                className="rounded-2xl border border-ink-700 bg-ink-950 p-6 text-center"
               >
-                <p className="font-display text-3xl text-sage-600">{s.v}</p>
-                <p className="mt-1 text-xs uppercase tracking-wide text-neutral-500">
+                <p className="font-display text-3xl text-forest-400">{s.v}</p>
+                <p className="mt-1 text-xs uppercase tracking-wide text-ink-400">
                   {s.k}
                 </p>
               </div>
@@ -94,36 +94,36 @@ export default function LeDomainePage() {
       </section>
 
       {/* Accès / situation */}
-      <section className="py-16 sm:py-20">
+      <section className="bg-ink-950 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center">
-            <p className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-sage-600">
+            <p className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.22em] text-forest-400">
               <MapPin className="h-4 w-4" />
               Situation
             </p>
-            <h2 className="mt-3 font-display text-3xl text-neutral-900">
+            <h2 className="mt-3 font-display text-3xl text-ink-50 md:text-4xl">
               {contact.lieu}
             </h2>
-            <p className="mt-3 text-neutral-600">
+            <p className="mt-3 text-ink-300">
               Aux portes de la Cité médiévale, au calme de la campagne audoise.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-3">
             {acces.map(({ icon: Icon, label, value }) => (
               <div
                 key={label}
-                className="flex flex-col items-center rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center shadow-sm"
+                className="flex flex-col items-center rounded-2xl border border-ink-700 bg-ink-900 p-6 text-center"
               >
-                <Icon className="h-8 w-8 text-primary-500" />
-                <p className="mt-3 font-medium text-neutral-900">{label}</p>
-                <p className="text-sm text-neutral-600">{value}</p>
+                <Icon className="h-8 w-8 text-forest-400" />
+                <p className="mt-3 font-medium text-ink-100">{label}</p>
+                <p className="text-sm text-ink-400">{value}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-3 rounded-2xl bg-secondary-50 p-8 text-center sm:flex-row">
-            <p className="font-display text-xl text-neutral-900">
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 rounded-2xl border border-ink-700 bg-ink-900 p-8 text-center sm:flex-row">
+            <p className="font-display text-xl text-ink-50">
               Envie de voir le domaine avant de venir ?
             </p>
             <Link

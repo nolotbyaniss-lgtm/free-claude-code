@@ -11,10 +11,10 @@ export default function MentionsLegalesPage() {
   return (
     <>
       <PageHeader titre="Mentions légales" />
-      <section className="py-16">
-        <div className="mx-auto max-w-2xl space-y-6 px-4 text-sm leading-relaxed text-neutral-600 sm:px-6">
+      <section className="bg-ink-950 py-16">
+        <div className="mx-auto max-w-2xl space-y-6 px-4 text-sm leading-relaxed text-ink-300 sm:px-6">
           <div>
-            <h2 className="font-display text-lg text-neutral-900">Éditeur</h2>
+            <h2 className="font-display text-lg text-ink-50">Éditeur</h2>
             <p className="mt-2">
               {contact.nom} — {contact.hotes}
               <br />
@@ -26,14 +26,14 @@ export default function MentionsLegalesPage() {
             </p>
           </div>
           <div>
-            <h2 className="font-display text-lg text-neutral-900">Hébergement</h2>
+            <h2 className="font-display text-lg text-ink-50">Hébergement</h2>
             <p className="mt-2">
               Ce site est hébergé par son prestataire d&apos;hébergement web. Les
               coordonnées complètes peuvent être communiquées sur demande.
             </p>
           </div>
           <div>
-            <h2 className="font-display text-lg text-neutral-900">
+            <h2 className="font-display text-lg text-ink-50">
               Propriété intellectuelle
             </h2>
             <p className="mt-2">
@@ -43,7 +43,7 @@ export default function MentionsLegalesPage() {
             </p>
           </div>
           <div>
-            <h2 className="font-display text-lg text-neutral-900">Données personnelles</h2>
+            <h2 className="font-display text-lg text-ink-50">Données personnelles</h2>
             <p className="mt-2">
               Les informations transmises via le formulaire de contact sont
               utilisées uniquement pour répondre à votre demande et ne sont
