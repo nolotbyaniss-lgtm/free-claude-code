@@ -6,8 +6,8 @@ import Link from 'next/link'
 import { gites } from '@/data/mock'
 
 const photos: Record<string, string> = {
-  'le-couvent':    'https://picsum.photos/seed/couvent-stone-1877/1400/900',
-  'le-presbytere': 'https://picsum.photos/seed/presbytere-medieval-1460/1400/900',
+  'le-couvent':    'https://picsum.photos/seed/couvent-stone-1877/1400/1100?grayscale',
+  'le-presbytere': 'https://picsum.photos/seed/presbytere-medieval-1460/1400/1100?grayscale',
 }
 
 const reveal = {
@@ -32,7 +32,7 @@ export function GitesShowcase() {
               {/* Photo */}
               <div className={`relative overflow-hidden ${isEven ? 'md:order-1' : 'md:order-2'} h-64 md:h-auto`}>
                 <Image
-                  src={photos[gite.slug] ?? 'https://picsum.photos/seed/estate-occitanie/1400/900'}
+                  src={photos[gite.slug] ?? 'https://picsum.photos/seed/estate-occitanie/1400/1100?grayscale'}
                   alt={gite.nom}
                   fill
                   className="object-cover"

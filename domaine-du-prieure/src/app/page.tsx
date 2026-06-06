@@ -5,6 +5,7 @@ import { Hero } from '@/components/home/hero'
 import { MarqueeStrip } from '@/components/home/marquee'
 import { GitesShowcase } from '@/components/home/gites-showcase'
 import { AmenitiesBento } from '@/components/home/amenities-bento'
+import { GalleryPan } from '@/components/home/gallery-pan'
 import { Reviews } from '@/components/home/reviews'
 import VisiteEmbed from '@/components/visite/visite-embed'
 
@@ -22,7 +23,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 md:grid-cols-2 md:items-center">
           <div className="relative h-[400px] overflow-hidden rounded-2xl md:h-[560px]">
             <Image
-              src="https://picsum.photos/seed/carcassonne-prieure-estate/900/700"
+              src="https://picsum.photos/seed/carcassonne-prieure-estate/900/700?grayscale"
               alt="Domaine du Prieuré"
               fill
               className="object-cover"
@@ -79,14 +80,17 @@ export default function Home() {
       {/* 6 — Équipements bento */}
       <AmenitiesBento />
 
-      {/* 7 — Avis */}
+      {/* 7 — Galerie horizontale (GSAP pan) */}
+      <GalleryPan />
+
+      {/* 8 — Avis */}
       <Reviews />
 
       {/* 8 — CTA contact */}
       <section className="relative overflow-hidden bg-ink-950 py-24 sm:py-32">
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src="https://picsum.photos/seed/carcassonne-nuit-occitanie/1600/900"
+            src="https://picsum.photos/seed/carcassonne-nuit-occitanie/1600/900?grayscale"
             alt=""
             fill
             className="object-cover opacity-20"
