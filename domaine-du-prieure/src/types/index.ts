@@ -31,6 +31,20 @@ export interface Avis {
   date: string
 }
 
+/** Bloc de réassurance (équipement / service clé) */
+export interface Reassurance {
+  /** nom d'icône lucide-react */
+  icon: string
+  titre: string
+  detail: string
+}
+
+/** Question fréquente */
+export interface Faq {
+  question: string
+  reponse: string
+}
+
 /** Point d'intérêt de la visite 3D du domaine */
 export interface Hotspot {
   id: string

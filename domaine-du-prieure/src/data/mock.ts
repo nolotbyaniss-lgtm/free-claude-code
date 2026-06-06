@@ -1,4 +1,4 @@
-import type { Gite, Amenity, Avis, Hotspot } from '@/types'
+import type { Gite, Amenity, Avis, Hotspot, Reassurance, Faq } from '@/types'
 
 export const contact = {
   nom: 'Domaine du Prieuré',
@@ -92,6 +92,48 @@ export const amenities: Amenity[] = [
     titre: 'Éco-responsable',
     description:
       'Une démarche durable engagée depuis plus de 20 ans sur le domaine.',
+  },
+]
+
+export const reassurances: Reassurance[] = [
+  { icon: 'Waves', titre: 'Piscine partagée', detail: 'Bassin plein sud, ouvert à la belle saison' },
+  { icon: 'Car', titre: 'Parking privé', detail: 'Stationnement gratuit sur le domaine' },
+  { icon: 'Zap', titre: 'Recharge électrique', detail: 'Borne pour véhicule électrique sur place' },
+  { icon: 'Bike', titre: 'Vélos offerts', detail: 'Tous gabarits + casques, gratuitement' },
+  { icon: 'PawPrint', titre: 'Animaux acceptés', detail: 'Vos compagnons sont les bienvenus' },
+  { icon: 'Leaf', titre: 'Éco-responsable', detail: 'Démarche zéro déchet depuis 20 ans' },
+]
+
+export const faq: Faq[] = [
+  {
+    question: 'Quelle est la différence entre Le Couvent et Le Presbytère ?',
+    reponse:
+      "Le Couvent (1877) accueille jusqu'à 8 voyageurs sur 200 m² avec 4 chambres ; Le Presbytère (1460) reçoit jusqu'à 5 personnes sur 130 m² et deux niveaux. Les deux partagent le jardin, la piscine et les services du domaine.",
+  },
+  {
+    question: 'Les animaux sont-ils acceptés ?',
+    reponse:
+      'Oui, vos animaux de compagnie sont les bienvenus dans les deux gîtes. Merci de nous le signaler à la réservation.',
+  },
+  {
+    question: 'Y a-t-il une borne de recharge pour véhicule électrique ?',
+    reponse:
+      'Oui, une borne de recharge est disponible sur le domaine, en plus du parking privé gratuit.',
+  },
+  {
+    question: 'À quelle distance se trouve la Cité de Carcassonne ?',
+    reponse:
+      'Le domaine est à 10 minutes en voiture du centre de Carcassonne et de sa Cité médiévale classée à l’UNESCO. Gare et aéroport sont à environ 12 et 15 minutes.',
+  },
+  {
+    question: 'Quels sont les horaires d’arrivée et de départ ?',
+    reponse:
+      "Arrivée à partir de 16 h, départ avant 10 h. Des arrangements sont possibles selon les disponibilités, n'hésitez pas à nous demander.",
+  },
+  {
+    question: 'Comment réserver ?',
+    reponse:
+      'Vous pouvez réserver en direct par téléphone ou via le formulaire de demande. Nous confirmons les disponibilités sous 24 h en général.',
   },
 ]
 

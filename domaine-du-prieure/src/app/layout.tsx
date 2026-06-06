@@ -28,11 +28,16 @@ export const metadata: Metadata = {
     "Deux gîtes d'exception dans un ancien couvent (1877) et un presbytère (1460), à 10 minutes de la Cité de Carcassonne. Piscine, jardin et démarche éco-responsable.",
   keywords: [
     'gîte Carcassonne',
+    'hébergement atypique Carcassonne',
+    'domaine avec piscine Carcassonne',
+    'gîte écoresponsable Aude',
+    'location vacances Cité de Carcassonne',
+    'gîte de charme Carcassonne',
     'location vacances Aude',
     'Domaine du Prieuré',
     'Le Couvent',
     'Le Presbytère',
-    'gîte de charme Occitanie',
+    'gîte animaux acceptés Aude',
   ],
   openGraph: {
     title: 'Domaine du Prieuré — Gîtes de charme près de Carcassonne',

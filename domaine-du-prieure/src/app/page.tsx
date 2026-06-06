@@ -6,6 +6,7 @@ import { MarqueeStrip } from '@/components/home/marquee'
 import { GitesShowcase } from '@/components/home/gites-showcase'
 import { AmenitiesBento } from '@/components/home/amenities-bento'
 import { GalleryPan } from '@/components/home/gallery-pan'
+import { ReassuranceBand } from '@/components/home/reassurance-band'
 import { Reviews } from '@/components/home/reviews'
 import VisiteEmbed from '@/components/visite/visite-embed'
 
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* 2 — Marquee */}
       <MarqueeStrip />
+
+      {/* 2b — Réassurance */}
+      <ReassuranceBand />
 
       {/* 3 — Intro éditoriale */}
       <section className="relative bg-ink-900 py-20 sm:py-28 overflow-hidden">

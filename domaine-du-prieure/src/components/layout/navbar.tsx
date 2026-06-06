@@ -57,12 +57,12 @@ export function NavBar() {
 
           {/* CTA + hamburger */}
           <div className="flex items-center gap-3">
-            <a
-              href={`tel:${contact.telephoneRaw}`}
-              className="hidden sm:inline-flex items-center gap-2 rounded-full border border-forest-600 bg-forest-700/30 px-4 py-2 text-sm font-medium text-forest-300 transition-all hover:bg-forest-700/60 hover:text-forest-100"
+            <Link
+              href="/reserver"
+              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-forest-600 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-forest-500 active:scale-[0.98]"
             >
               Réserver
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setOpen(true)}
