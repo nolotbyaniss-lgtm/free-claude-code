@@ -68,16 +68,36 @@
   --font-sans:    var(--font-body), sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--color-neutral-50);
-  color: var(--color-neutral-900);
+  background-color: var(--color-ink-950);
+  color: var(--color-ink-100);
   font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background-color: var(--color-forest-200);
-  color: var(--color-forest-900);
+  background-color: var(--color-forest-500);
+  color: var(--color-ink-50);
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-ink-950); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 999px;
+  border: 2px solid var(--color-ink-950);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-forest-700); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee { animation: none; }
 }
 
 /* Marquee — infinite horizontal scroll */
