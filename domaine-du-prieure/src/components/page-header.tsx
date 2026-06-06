@@ -8,22 +8,21 @@ export function PageHeader({
   intro?: string
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-neutral-200 bg-gradient-to-br from-secondary-100 via-neutral-50 to-sage-100">
-      <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20">
+    <section className="relative overflow-hidden bg-ink-950 pt-28 pb-16 sm:pt-32 sm:pb-20">
+      {/* Subtle radial glow */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(79,127,87,0.12),transparent)]" />
+      <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         {eyebrow && (
-          <p className="text-sm uppercase tracking-[0.2em] text-sage-600">
-            {eyebrow}
-          </p>
+          <p className="text-xs uppercase tracking-[0.25em] text-forest-400">{eyebrow}</p>
         )}
-        <h1 className="mt-3 font-display text-4xl text-neutral-900 sm:text-5xl">
-          {titre}
-        </h1>
+        <h1 className="mt-4 font-display text-5xl text-ink-50 sm:text-6xl">{titre}</h1>
         {intro && (
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-neutral-600">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink-300 sm:text-lg">
             {intro}
           </p>
         )}
       </div>
+      <div className="mt-12 h-px bg-gradient-to-r from-transparent via-ink-700 to-transparent" />
     </section>
   )
 }

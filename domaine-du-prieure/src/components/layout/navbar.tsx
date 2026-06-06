@@ -1,65 +1,121 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, Phone } from 'lucide-react'
+import { useScroll } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/components/ui/button'
 import { navLinks } from '@/data/nav'
 import { contact } from '@/data/mock'
-import { MobileMenu } from './mobile-menu'
 
 export function NavBar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const { scrollY } = useScroll()
+
+  useEffect(() => {
+    return scrollY.on('change', (v) => {
+      setScrolled((prev) => {
+        const next = v > 72
+        return prev === next ? prev : next
+      })
+    })
+  }, [scrollY])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-300/70 bg-neutral-50/85 backdrop-blur">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="group flex flex-col leading-none">
-          <span className="font-display text-xl tracking-wide text-primary-700 transition-colors group-hover:text-primary-500">
-            Domaine du Prieuré
-          </span>
-          <span className="text-[0.65rem] uppercase tracking-[0.25em] text-sage-500">
-            Carcassonne
-          </span>
-        </Link>
+    <>
+      <header
+        className={cn(
+          'fixed top-0 inset-x-0 z-50 transition-all duration-400',
+          scrolled
+            ? 'bg-ink-950/92 backdrop-blur-md border-b border-white/8'
+            : 'bg-ink-950/0'
+        )}
+      >
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
+          {/* Logo */}
+          <Link href="/" className="group flex flex-col leading-none">
+            <span className="font-display text-xl text-ink-50 tracking-wide transition-colors group-hover:text-forest-300">
+              Domaine du Prieuré
+            </span>
+            <span className="text-[0.62rem] uppercase tracking-[0.28em] text-forest-400">
+              Carcassonne
+            </span>
+          </Link>
 
-        <div className="hidden items-center gap-6 lg:flex">
-          {navLinks.slice(1).map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-neutral-700 transition-colors hover:text-primary-600"
+          {/* Desktop links */}
+          <div className="hidden items-center gap-7 lg:flex">
+            {navLinks.slice(1).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-ink-200 transition-colors hover:text-ink-50"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA + hamburger */}
+          <div className="flex items-center gap-3">
+            <a
+              href={`tel:${contact.telephoneRaw}`}
+              className="hidden sm:inline-flex items-center gap-2 rounded-full border border-forest-600 bg-forest-700/30 px-4 py-2 text-sm font-medium text-forest-300 transition-all hover:bg-forest-700/60 hover:text-forest-100"
             >
-              {link.label}
-            </Link>
-          ))}
+              Réserver
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              aria-label="Ouvrir le menu"
+              className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full text-ink-200 transition-colors hover:bg-white/8 lg:hidden"
+            >
+              <span
+                className={cn(
+                  'block h-[1.5px] w-5 bg-current transition-all duration-300',
+                  open && 'translate-y-[3px] rotate-45'
+                )}
+              />
+              <span
+                className={cn(
+                  'block h-[1.5px] w-5 bg-current transition-all duration-300',
+                  open && '-translate-y-[3px] -rotate-45'
+                )}
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div className="fixed inset-0 z-40 lg:hidden">
+          <div
+            className="absolute inset-0 bg-ink-950/60 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
+          <nav className="absolute right-0 top-0 h-full w-72 bg-ink-950 px-6 pt-20 pb-10 shadow-2xl">
+            <ul className="flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-xl px-4 py-3 text-base font-medium text-ink-100 transition-colors hover:bg-ink-800 hover:text-ink-50"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={`tel:${contact.telephoneRaw}`}
+              className="mt-8 flex w-full items-center justify-center rounded-full border border-forest-600 py-3 text-sm font-medium text-forest-300 hover:bg-forest-700/30"
+            >
+              {contact.telephone}
+            </a>
+          </nav>
         </div>
-
-        <div className="flex items-center gap-2">
-          <a
-            href={`tel:${contact.telephoneRaw}`}
-            className={cn(
-              buttonVariants({ variant: 'primary', size: 'sm' }),
-              'hidden sm:inline-flex'
-            )}
-          >
-            <Phone className="h-4 w-4" />
-            Réserver
-          </a>
-
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-label="Ouvrir le menu"
-            className="rounded-full p-2 text-neutral-900 transition-colors hover:bg-neutral-300/40 lg:hidden"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
-        </div>
-      </nav>
-
-      <MobileMenu open={open} onClose={() => setOpen(false)} />
-    </header>
+      )}
+    </>
   )
 }
