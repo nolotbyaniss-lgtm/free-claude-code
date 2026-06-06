@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-bg: #f7f3ec;
+  --color-text: #2a2520;
+
+  /* shadcn/ui CSS variables (warm stone base) */
+  --background: 39 38% 95%;
+  --foreground: 30 13% 15%;
+  --card: 39 38% 95%;
+  --card-foreground: 30 13% 15%;
+  --popover: 39 38% 95%;
+  --popover-foreground: 30 13% 15%;
+  --primary: 19 56% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 38 46% 61%;
+  --secondary-foreground: 30 13% 15%;
+  --muted: 39 25% 90%;
+  --muted-foreground: 30 10% 40%;
+  --accent: 82 19% 60%;
+  --accent-foreground: 30 13% 15%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 36 20% 82%;
+  --input: 36 20% 82%;
+  --ring: 19 56% 46%;
+  --radius: 0.5rem;
+}
+
+@theme {
+  /* Terracotta — toits, pierre chaude du Sud */
+  --color-primary-50: #fbf5f0;
+  --color-primary-100: #f4e1d3;
+  --color-primary-200: #e7bfa1;
+  --color-primary-300: #d79a72;
+  --color-primary-400: #c97a4d;
+  --color-primary-500: #b85c33;
+  --color-primary-600: #9a4826;
+  --color-primary-700: #76371d;
+
+  /* Sauge / olive — jardin, vignes, éco-responsable */
+  --color-sage-50: #f3f5ef;
+  --color-sage-100: #e2e7d8;
+  --color-sage-200: #c3cdae;
+  --color-sage-300: #9fad83;
+  --color-sage-400: #7e8e62;
+  --color-sage-500: #65744c;
+  --color-sage-600: #4e5a3a;
+  --color-sage-700: #3a432c;
+
+  /* Doré / pierre claire */
+  --color-secondary-50: #fdfbf5;
+  --color-secondary-100: #f7efdc;
+  --color-secondary-200: #ecdcb8;
+  --color-secondary-500: #c9a96e;
+
+  /* Neutres chauds — calcaire, ardoise */
+  --color-neutral-900: #2a2520;
+  --color-neutral-800: #3d362e;
+  --color-neutral-600: #5e554a;
+  --color-neutral-300: #c9bfb1;
+  --color-neutral-200: #e3dccf;
+  --color-neutral-100: #f3eee5;
+  --color-neutral-50: #f7f3ec;
+
+  --font-display: var(--font-cormorant), serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-700);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}

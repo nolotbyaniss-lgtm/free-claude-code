@@ -4,13 +4,8 @@ import Link from 'next/link'
 import { X, Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
-
-const links = [
-  { href: '/', label: 'Accueil' },
-  { href: '/boutique', label: 'Boutique' },
-  { href: '/a-propos', label: 'À propos' },
-  { href: '/contact', label: 'Contact' },
-]
+import { navLinks } from '@/data/nav'
+import { contact } from '@/data/mock'
 
 interface MobileMenuProps {
   open: boolean
@@ -21,7 +16,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   return (
     <div
       className={cn(
-        'fixed inset-0 z-50 bg-neutral-100 transition-opacity duration-300 md:hidden',
+        'fixed inset-0 z-50 bg-neutral-50 transition-opacity duration-300 lg:hidden',
         open
           ? 'pointer-events-auto opacity-100'
           : 'pointer-events-none opacity-0'
@@ -29,7 +24,10 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       aria-hidden={!open}
     >
       <div className="flex h-full flex-col">
-        <div className="flex items-center justify-end p-4">
+        <div className="flex items-center justify-between p-4">
+          <span className="font-display text-lg text-primary-700">
+            Domaine du Prieuré
+          </span>
           <button
             type="button"
             onClick={onClose}
@@ -40,13 +38,13 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           </button>
         </div>
 
-        <nav className="flex flex-1 flex-col items-center justify-center gap-8">
-          {links.map((link) => (
+        <nav className="flex flex-1 flex-col items-center justify-center gap-7">
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="font-display text-2xl text-neutral-900 transition-colors hover:text-primary-500"
+              className="font-display text-3xl text-neutral-900 transition-colors hover:text-primary-500"
             >
               {link.label}
             </Link>
@@ -55,12 +53,12 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
         <div className="flex justify-center p-8">
           <a
-            href="tel:0750435103"
+            href={`tel:${contact.telephoneRaw}`}
             onClick={onClose}
             className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}
           >
             <Phone className="h-5 w-5" />
-            07 50 43 51 03
+            {contact.telephone}
           </a>
         </div>
       </div>
