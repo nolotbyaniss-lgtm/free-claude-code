@@ -6,6 +6,7 @@ import { MarqueeStrip } from '@/components/home/marquee'
 import { GitesShowcase } from '@/components/home/gites-showcase'
 import { AmenitiesBento } from '@/components/home/amenities-bento'
 import { GalleryPan } from '@/components/home/gallery-pan'
+import { ParallaxGallery } from '@/components/home/parallax-gallery'
 import { ReassuranceBand } from '@/components/home/reassurance-band'
 import { Reviews } from '@/components/home/reviews'
 import VisiteEmbed from '@/components/visite/visite-embed'
@@ -84,6 +85,9 @@ export default function Home() {
 
       {/* 6 — Équipements bento */}
       <AmenitiesBento />
+
+      {/* 6b — Galerie parallaxe 3D (tilt au curseur) */}
+      <ParallaxGallery />
 
       {/* 7 — Galerie horizontale (GSAP pan) */}
       <GalleryPan />
