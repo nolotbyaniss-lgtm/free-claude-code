@@ -2,13 +2,14 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { photos } from '@/data/images'
 
 const cells = [
   {
     id: 'piscine',
     title: 'Piscine',
     sub: 'Plein sud, à partager en famille',
-    img: 'https://picsum.photos/seed/piscine-domaine-4/800/600?grayscale',
+    img: photos.piscine,
     span: 'md:col-span-2 md:row-span-2',
     dark: false,
   },
@@ -25,7 +26,7 @@ const cells = [
     id: 'eco',
     title: 'Éco depuis 20 ans',
     sub: 'Sans produit chimique',
-    img: 'https://picsum.photos/seed/eco-jardin-mediter/600/400?grayscale',
+    img: photos.domaine,
     span: '',
     dark: false,
   },
@@ -51,7 +52,7 @@ const cells = [
     id: 'bbq',
     title: 'Barbecue & Terrasse',
     sub: 'Soirées étoilées en Occitanie',
-    img: 'https://picsum.photos/seed/terrasse-bbq-7/800/500?grayscale',
+    img: photos.interieur,
     span: 'md:col-span-2',
     dark: false,
   },

@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'fastly.picsum.photos',
       },
+      {
+        protocol: 'https',
+        hostname: 'd8j0ntlcm91z4.cloudfront.net',
+      },
     ],
   },
 };

@@ -9,6 +9,7 @@ import { GalleryPan } from '@/components/home/gallery-pan'
 import { ReassuranceBand } from '@/components/home/reassurance-band'
 import { Reviews } from '@/components/home/reviews'
 import VisiteEmbed from '@/components/visite/visite-embed'
+import { photos } from '@/data/images'
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 md:grid-cols-2 md:items-center">
           <div className="relative h-[400px] overflow-hidden rounded-2xl md:h-[560px]">
             <Image
-              src="https://picsum.photos/seed/carcassonne-prieure-estate/900/700?grayscale"
+              src={photos.interieur}
               alt="Domaine du Prieuré"
               fill
               className="object-cover"
@@ -94,7 +95,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-ink-950 py-24 sm:py-32">
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src="https://picsum.photos/seed/carcassonne-nuit-occitanie/1600/900?grayscale"
+            src={photos.domaine}
             alt=""
             fill
             className="object-cover opacity-20"

@@ -5,39 +5,40 @@ import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useReducedMotion } from 'framer-motion'
+import { photos } from '@/data/images'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const slides = [
   {
-    img: 'https://picsum.photos/seed/stone-cloister-arches/1100/1400?grayscale',
+    img: photos.couvent,
     kicker: 'La pierre',
-    title: 'Voûtes et pierres d’époque',
-    body: 'Les murs portent six siècles. Chaque pièce garde la fraîcheur de la pierre.',
+    title: 'Voutes et pierres d\'epoque',
+    body: 'Les murs portent six siecles. Chaque piece garde la fraicheur de la pierre taille.',
   },
   {
-    img: 'https://picsum.photos/seed/provence-pool-summer/1100/1400?grayscale',
-    kicker: 'L’été',
+    img: photos.piscine,
+    kicker: 'L\'ete',
     title: 'La piscine plein sud',
-    body: 'Un bassin pour les longues journées d’Occitanie, ouvert sur le jardin.',
+    body: 'Un bassin pour les longues journees d\'Occitanie, ouvert sur le jardin et les collines.',
   },
   {
-    img: 'https://picsum.photos/seed/mediterranean-garden-path/1100/1400?grayscale',
+    img: photos.domaine,
     kicker: 'Le jardin',
-    title: '800 m² de verdure',
-    body: 'Oliviers, lavande et coins d’ombre. Sans produit chimique depuis vingt ans.',
+    title: '800 m2 de verdure',
+    body: 'Oliviers, lavande et coins d\'ombre. Sans produit chimique depuis vingt ans.',
   },
   {
-    img: 'https://picsum.photos/seed/carcassonne-medieval-city/1100/1400?grayscale',
-    kicker: 'Autour',
-    title: 'La Cité à dix minutes',
-    body: 'La forteresse médiévale de Carcassonne, classée à l’UNESCO, tout près.',
+    img: photos.presbytere,
+    kicker: 'L\'histoire',
+    title: 'Le Presbytere medieval',
+    body: 'Date de 1460. Chaque pierre raconte l\'histoire de l\'Occitanie medievale.',
   },
   {
-    img: 'https://picsum.photos/seed/rustic-stone-interior-table/1100/1400?grayscale',
-    kicker: 'L’intérieur',
-    title: 'Volumes et lumière',
-    body: 'Plafonds hauts, cuisine équipée, confort contemporain dans un écrin ancien.',
+    img: photos.interieur,
+    kicker: 'L\'interieur',
+    title: 'Volumes et lumiere',
+    body: 'Plafonds hauts, cuisine equipee, confort contemporain dans un ecrin ancien.',
   },
 ]
 
@@ -91,7 +92,7 @@ export function GalleryPan() {
             ))}
             <div className="flex h-full w-[20vw] flex-shrink-0 items-center">
               <p className="font-display text-2xl italic text-ink-500">
-                … et bien plus.
+                ... et bien plus.
               </p>
             </div>
           </div>

@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { gites } from '@/data/mock'
+import { photos as estatePhotos } from '@/data/images'
 
 const photos: Record<string, string> = {
-  'le-couvent':    'https://picsum.photos/seed/couvent-stone-1877/1400/1100?grayscale',
-  'le-presbytere': 'https://picsum.photos/seed/presbytere-medieval-1460/1400/1100?grayscale',
+  'le-couvent':    estatePhotos.couvent,
+  'le-presbytere': estatePhotos.presbytere,
 }
 
 const reveal = {
@@ -32,7 +33,7 @@ export function GitesShowcase() {
               {/* Photo */}
               <div className={`relative overflow-hidden ${isEven ? 'md:order-1' : 'md:order-2'} h-64 md:h-auto`}>
                 <Image
-                  src={photos[gite.slug] ?? 'https://picsum.photos/seed/estate-occitanie/1400/1100?grayscale'}
+                  src={photos[gite.slug] ?? estatePhotos.domaine}
                   alt={gite.nom}
                   fill
                   className="object-cover"
