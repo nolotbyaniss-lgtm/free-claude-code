@@ -1,11 +1,52 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Leaf, MapPin, Box, Car, Plane, Train } from 'lucide-react'
+import {
+  Leaf,
+  MapPin,
+  Box,
+  Car,
+  Plane,
+  Train,
+  Star,
+  Waves,
+  CircleParking,
+  Wifi,
+  Users,
+  UtensilsCrossed,
+  CigaretteOff,
+  Flame,
+  Sun,
+  Trees,
+  Baby,
+  Bike,
+  type LucideIcon,
+} from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import { PageHeader } from '@/components/page-header'
 import { AmenityIcon } from '@/components/amenity-icon'
-import { amenities, contact } from '@/data/mock'
+import {
+  amenities,
+  contact,
+  presentation,
+  pointsForts,
+  noteVoyageurs,
+} from '@/data/mock'
+
+const fortIcons: Record<string, LucideIcon> = {
+  Waves,
+  CircleParking,
+  Wifi,
+  Users,
+  UtensilsCrossed,
+  CigaretteOff,
+  Plane,
+  Flame,
+  Sun,
+  Trees,
+  Baby,
+  Bike,
+}
 
 export const metadata: Metadata = {
   title: 'Le Domaine',
@@ -15,7 +56,7 @@ export const metadata: Metadata = {
 
 const acces = [
   { icon: Car, label: 'Carcassonne centre', value: '10 min en voiture' },
-  { icon: Plane, label: 'Aéroport de Carcassonne', value: '15 min' },
+  { icon: Plane, label: 'Aéroport de Carcassonne', value: '5 min' },
   { icon: Train, label: 'Gare de Carcassonne', value: '12 min' },
 ]
 
@@ -27,6 +68,68 @@ export default function LeDomainePage() {
         titre="Le Domaine"
         intro="Un jardin de 800 m² baigné de soleil, entre pierre dorée et oliviers, pensé pour la détente en famille ou entre amis."
       />
+
+      {/* Présentation officielle */}
+      <section className="bg-ink-900 py-16 sm:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-[1.4fr_1fr] md:items-start">
+          <div className="space-y-5">
+            {presentation.map((p, i) => (
+              <p
+                key={i}
+                className={cn(
+                  'leading-relaxed text-ink-300',
+                  i === 0 && 'text-lg text-ink-100'
+                )}
+              >
+                {p}
+              </p>
+            ))}
+          </div>
+
+          {/* Note voyageurs */}
+          <div className="rounded-2xl border border-forest-800 bg-forest-900/30 p-8 text-center md:sticky md:top-28">
+            <p className="font-display text-6xl text-forest-300">
+              {noteVoyageurs.note}
+            </p>
+            <div className="mt-2 flex justify-center gap-1 text-forest-400">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-4 w-4 fill-current" />
+              ))}
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-ink-200">
+              <span className="font-medium text-ink-50">
+                {noteVoyageurs.cible}
+              </span>{' '}
+              {noteVoyageurs.detail}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Points forts */}
+      <section className="bg-ink-950 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-center font-display text-3xl text-ink-50 md:text-5xl">
+            Ses points forts
+          </h2>
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {pointsForts.map(({ icon, label }) => {
+              const Icon = fortIcons[icon]
+              return (
+                <div
+                  key={label}
+                  className="flex items-center gap-3 rounded-xl border border-ink-700 bg-ink-900 p-4 transition-colors hover:border-forest-700"
+                >
+                  {Icon && (
+                    <Icon className="h-5 w-5 flex-shrink-0 text-forest-400" />
+                  )}
+                  <span className="text-sm text-ink-200">{label}</span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* Équipements */}
       <section className="bg-ink-950 py-16 sm:py-24">

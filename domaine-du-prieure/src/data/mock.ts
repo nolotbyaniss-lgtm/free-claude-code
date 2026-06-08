@@ -11,6 +11,38 @@ export const contact = {
   distanceCentre: '10 min du centre de Carcassonne',
 }
 
+// Présentation officielle du domaine (texte établissement).
+export const presentation: string[] = [
+  "Le Domaine du Prieuré vous accueille dans un cadre unique, à seulement 10 minutes de la Cité de Carcassonne. Niché dans un environnement calme et verdoyant, l'établissement propose deux maisons de caractère indépendantes : un ancien couvent et un ancien presbytère entièrement rénovés.",
+  "Chaque maison offre de beaux volumes, une terrasse privative et des espaces de vie confortables, alliant le charme de l'ancien au confort moderne. Vous pourrez profiter d'un jardin paysager et d'une grande piscine extérieure partagés, idéals pour se détendre en toute sérénité.",
+  "Sur place, tout est pensé pour des séjours conviviaux : repas en extérieur, moments de détente au soleil, jeux en famille et soirées d'été. Une aire de jeux pour enfants est également disponible.",
+  "Situé dans le village de Grèzes, à 5 minutes de l'aéroport de Carcassonne et à proximité des commerces, le Domaine du Prieuré constitue un point de départ idéal pour découvrir la région, entre patrimoine, nature et gastronomie.",
+  "Une connexion Wi-Fi gratuite et un parking privé sont à votre disposition.",
+]
+
+// Note voyageurs mise en avant.
+export const noteVoyageurs = {
+  note: '9,5',
+  cible: 'Les couples',
+  detail: "apprécient particulièrement l'emplacement pour un séjour à deux.",
+}
+
+// Points forts (icônes lucide-react).
+export const pointsForts: { icon: string; label: string }[] = [
+  { icon: 'Waves', label: 'Piscine extérieure' },
+  { icon: 'CircleParking', label: 'Parking gratuit' },
+  { icon: 'Wifi', label: 'Connexion Wi-Fi gratuite' },
+  { icon: 'Users', label: 'Chambres familiales' },
+  { icon: 'UtensilsCrossed', label: 'Cuisine équipée' },
+  { icon: 'CigaretteOff', label: 'Logement non-fumeurs' },
+  { icon: 'Plane', label: 'Aéroport à 5 min' },
+  { icon: 'Flame', label: 'Installations pour barbecue' },
+  { icon: 'Sun', label: 'Terrasse privative' },
+  { icon: 'Trees', label: 'Jardin paysager' },
+  { icon: 'Baby', label: 'Aire de jeux enfants' },
+  { icon: 'Bike', label: 'Vélos offerts' },
+]
+
 export const gites: Gite[] = [
   {
     id: '1',
