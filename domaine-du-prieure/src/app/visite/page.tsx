@@ -15,7 +15,7 @@ export default function VisitePage() {
       <PageHeader
         eyebrow="Visite immersive"
         titre="Explorez le domaine en 3D"
-        intro="Faites glisser pour pivoter autour des bâtisses, ou laissez-vous guider d'un point d'intérêt à l'autre par des transitions fluides."
+        intro="Les photographies du domaine, suspendues en arc dans un espace 3D. Faites glisser pour pivoter, ou laissez-vous guider d'un lieu à l'autre par des transitions fluides."
       />
 
       <section className="bg-ink-950 py-12 sm:py-16">
@@ -39,8 +39,8 @@ export default function VisitePage() {
           </div>
 
           <p className="mt-8 text-center text-sm text-ink-400">
-            Maquette 3D illustrative du domaine. Les volumes et l&apos;agencement
-            sont schématiques.
+            Visite immersive composée à partir des photographies du domaine.
+            Glissez pour pivoter, ou choisissez un lieu pour vous en approcher.
           </p>
         </div>
       </section>
