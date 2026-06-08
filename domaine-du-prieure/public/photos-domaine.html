@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Domaine du Prieuré — Photos</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0b0908; font-family: Georgia, serif; }
+  .cover {
+    width: 210mm; height: 297mm;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    page-break-after: always;
+    background: #0b0908;
+    color: #f0ece6;
+    text-align: center;
+    padding: 40mm;
+  }
+  .cover h1 { font-size: 36pt; letter-spacing: 0.02em; margin-bottom: 8mm; }
+  .cover p  { font-size: 12pt; color: #6aaa78; letter-spacing: 0.15em; text-transform: uppercase; }
+  .cover hr { width: 40mm; border: none; border-top: 1px solid #6aaa78; margin: 8mm auto; }
+  .cover .sub { font-size: 11pt; color: #a0a090; margin-top: 6mm; }
+
+  .page {
+    width: 210mm; height: 297mm;
+    display: flex; flex-direction: column;
+    page-break-after: always;
+    background: #0b0908;
+    overflow: hidden;
+  }
+  .photo-wrap {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  .photo-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .caption {
+    padding: 8mm 10mm;
+    background: #0b0908;
+    color: #f0ece6;
+  }
+  .caption .kicker {
+    font-size: 8pt; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #6aaa78; margin-bottom: 2mm;
+  }
+  .caption h2 { font-size: 18pt; margin-bottom: 2mm; }
+  .caption p  { font-size: 10pt; color: #9a968e; line-height: 1.55; }
+
+  @media print {
+    @page { size: A4 portrait; margin: 0; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Couverture -->
+<div class="cover">
+  <p>Occitanie · Grèzes</p>
+  <hr>
+  <h1>Domaine<br>du Prieuré</h1>
+  <hr>
+  <div class="sub">Photographies du domaine · 2026</div>
+</div>
+
+<!-- 1 — Le Couvent -->
+<div class="page">
+  <div class="photo-wrap">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3EgR1BeQ6FufpYasyZWOGxamPUp/hf_20260606_124506_c99bb23e-1b27-4d00-87f9-e3e080481ce8.png" alt="Le Couvent">
+  </div>
+  <div class="caption">
+    <div class="kicker">01 — Le Couvent · 1877</div>
+    <h2>Couvent de la Sainte-Famille</h2>
+    <p>Pierre dorée, clocheton et fenêtres cintrées. 8 voyageurs, 4 chambres, 200 m².</p>
+  </div>
+</div>
+
+<!-- 2 — Le Presbytère -->
+<div class="page">
+  <div class="photo-wrap">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3EgR1BeQ6FufpYasyZWOGxamPUp/hf_20260606_124532_c1e1c4ad-5ba0-48ea-8f4c-dc5942bf0b7c.png" alt="Le Presbytère">
+  </div>
+  <div class="caption">
+    <div class="kicker">02 — Le Presbytère · 1460</div>
+    <h2>Demeure médiévale</h2>
+    <p>La plus ancienne bâtisse du domaine. 5 voyageurs, 3 chambres, 130 m² sur deux niveaux.</p>
+  </div>
+</div>
+
+<!-- 3 — La Piscine -->
+<div class="page">
+  <div class="photo-wrap">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3EgR1BeQ6FufpYasyZWOGxamPUp/hf_20260606_124534_93ffabb7-4c18-49b7-913d-a98af07f63a9.png" alt="La Piscine">
+  </div>
+  <div class="caption">
+    <div class="kicker">03 — La Piscine</div>
+    <h2>Bassin plein sud</h2>
+    <p>Ouvert sur le jardin et les collines de l'Aude. Pétanque, barbecue, coin repos à l'ombre.</p>
+  </div>
+</div>
+
+<!-- 4 — L'Intérieur -->
+<div class="page">
+  <div class="photo-wrap">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3EgR1BeQ6FufpYasyZWOGxamPUp/hf_20260606_124535_92b4b8fd-6bff-43e4-9ade-435c10561cbf.png" alt="Intérieur">
+  </div>
+  <div class="caption">
+    <div class="kicker">04 — L'Intérieur</div>
+    <h2>Volumes et lumière</h2>
+    <p>Plafonds hauts, pierre apparente, cuisine équipée. Confort contemporain dans un écrin médiéval.</p>
+  </div>
+</div>
+
+<!-- 5 — Le Domaine -->
+<div class="page">
+  <div class="photo-wrap">
+    <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3EgR1BeQ6FufpYasyZWOGxamPUp/hf_20260606_124537_2e978e66-c604-4a18-a280-feea0da9fbee.png" alt="Le Domaine">
+  </div>
+  <div class="caption">
+    <div class="kicker">05 — Le Domaine</div>
+    <h2>800 m² de jardin</h2>
+    <p>Vue dégagée sur la campagne occitane. Sans produit chimique depuis plus de 20 ans.</p>
+  </div>
+</div>
+
+</body>
+</html>
